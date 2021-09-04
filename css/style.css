@@ -208,6 +208,15 @@ button,a{
 	letter-spacing: -0.272px;
 }
 
+.footer_title1{
+	font-family: 'Montserrat', sans-serif;
+	margin: 0px;
+	font-size: 20px;
+	color: #000;
+	font-weight: 800;
+	letter-spacing: -0.272px;
+}
+
 .hero{
 	width: 100%;
 	padding-top: 230px;
