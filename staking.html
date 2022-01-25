@@ -190,7 +190,7 @@
               <li><a href="map.html">Map</a></li>
             </ul>
           </nav>
-          <div id="ual-app"></div>
+           <button id="waxlogin" class="btn header__btn" onclick="Login();">Login</button>
         </div>
       </div>
     </header>
@@ -251,14 +251,16 @@
     <script src="js/main_bundle.js"></script>
 	-->
     <script src="js/popup-menu-script.js"></script>
-	<script src="js/waxjs.js"></script>
+
+ 
 	<script src="js/atomicassets.js"></script>
+	<script src="js/waxjs.js"></script>
+	<script src="js/login.js"></script>
+
+	
 	<script>
 		
-		const wax = new waxjs.WaxJS({
-		  rpcEndpoint: 'https://api.waxsweden.org',
-		  tryAutoLogin: false
-		});
+
 		
 		
 		const atomicApi = new atomicassets.ExplorerApi(
@@ -267,14 +269,13 @@
 		  {fetch}
 		);
 		
-		WaxLogin();
+		//WaxLogin();
 		
 		var staking_slots = new Array(3);
 		
-		async function WaxLogin(){
+		async function Login(){
 		  try {
-		    const userAccount = await wax.login();
-			console.log(userAccount);
+		    await WaxLogin();
 			GetAssets();
 			GetUserSlots();
 		  } catch(e) {		
@@ -283,7 +284,7 @@
 		}
 		
 		async function GetAssets() {
-			const assets = await atomicApi.getAssets({owner: wax.userAccount, collection_name: "brokentest11"}, 1, 1000);
+			const assets = await atomicApi.getAssets({owner: wax.userAccount, collection_name: "brokenwrld55"}, 1, 1000);
 	
 			Object.values(assets).forEach(function (value) {
 			
