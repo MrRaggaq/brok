@@ -307,6 +307,7 @@
 							div.remove();
 							var popup_menu = document.querySelector('.popup-stalking-wrapper');
 							popup_menu.click();
+							GetUserSlots();
 						}
 							
 					} else {
@@ -394,7 +395,6 @@
 				blocksBehind: 3,
 				expireSeconds: 30
 			  });
-
 			} catch(e) {
 				console.log(e.message);
 				window.alert(e.message);
@@ -430,8 +430,11 @@
 					img.width = 150;
 					img.onclick = async function () { 
 						var isUnstaked = await UnstakeCard(slot);
-						if (isUnstaked)
+						if (isUnstaked) {
 							document.getElementById('slot' + slot).innerHTML = "Empty";
+							if (staking_slots.length > slot)
+								staking_slots[slot] = false;
+						}
 					};
 				
 					document.getElementById('slot' + slot).innerHTML = ""; //append(div);
