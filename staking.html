@@ -4,99 +4,449 @@
 <!--[if IE 8]><html lang="ru" class="lt-ie9"><![endif]-->
 <!--[if gt IE 8]><!-->
 <html lang="ru">
-<!--<![endif]-->
+  <!--<![endif]-->
 
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>Staking</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <link rel="icon" href="img/favicon.png">
-    <link rel="stylesheet" href="css/app.min.css">
-	<style>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="img/favicon (1).ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/app.min.css" />
+    <link rel="stylesheet" href="css/popup-menu-styles.css" />
+    <style>
+      .dropdown {
+        position: relative;
+        display: inline-block;
+        cursor: hand;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        z-index: 1;
+        font-size: 22px;
+        border-color: #6affff;
+        border: solid;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue";
+      }
 
-		.dropdown {
-		  position: relative;
-		  display: inline-block;
-		  cursor: hand;
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        color: #6affff;
+        display: block;
+      }
+
+      .dropdown-content a:hover {
+        background-color: rgba(130, 154, 233, 0.55);
+        color: #6affff;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+        background-color: rgba(130, 154, 233, 0.55);
+        color: #6affff;
+      }
+	  
+	  .staking_block {
+		  border: 2px solid #6AFFFF;
+		  background: rgba(31, 30, 30, 0.55);
+		  padding: 50px;
+		  border-radius: 20px;
+		  text-align: center;
+		  width: 250px;
+		  height: 100;
+		  color: #6AFFFF;
+		  margin: 50px;
 		}
-		.dropdown-content {
-		  display: none;
-		  position: absolute;
-		  z-index: 1;
-		  font-size: 22px;
-		  border-color: #6affff;
-		  border: solid;
-		  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue";
+    </style>
+  </head>
 
-		}
+  <body>
+    <!-- popup-menu -->
+    <div class="popup-stalking-wrapper">
+      <div class="cards-menu-screen">
+        <div class="DE-left-skewed-border"></div>
+        <div class="DE-bottom-circle">
+          <div class="DE-bottom-circle_dot">
+            <img src="./img/Ellipse 1.png" alt="" />
+          </div>
+          <div class="DE-bottom-circle_right-wing">
+            <img src="./img/Ellipse 3.png" alt="" />
+          </div>
+          <div class="DE-bottom-circle_left-wing">
+            <img src="./img/Ellipse 2.png" alt="" />
+          </div>
+        </div>
+        <div class="DE-lines-on-top_left">
+          <img src="./img/Rectangle 18.png" alt="" />
+          <img src="./img/Rectangle 18.png" alt="" />
+          <img src="./img/Rectangle 18.png" alt="" />
+        </div>
+        <div class="DE-lines-on-top_right">
+          <img src="./img/Rectangle 16.png" alt="" />
+          <img src="./img/Rectangle 16.png" alt="" />
+          <img src="./img/Rectangle 16.png" alt="" />
+        </div>
+        <div class="your-cards-container">
+          <div class="your-cards">
+            <div class="your-cards__header">
+              <div class="header__cards-button">
+                <span class="header__cards-button_text">cards</span>
+              </div>
+              <div class="header__map-button header__map-button_cards">
+                <span class="header__map-button_text">map</span>
+              </div>
+              <div class="header__logo">Your cards</div>
+              <div class="header__top-right-corner">
+                <div class="header__top-right-corner_ico"></div>
+                <div class="header__top-right-corner_numbers">0.000</div>
+                <div class="header__top-right-corner_NON">NON</div>
+              </div>
+            </div>
+            <div class="your-cards__cards" id="bag" >
 
-		.dropdown-content a {
-		  color: black;
-		  padding: 12px 16px;
-		  text-decoration: none;
-		  color: #6affff;
-		  display: block;
-		}
-
-
-		.dropdown-content a:hover {background-color:rgba(130,154,233,.55);    color: #6affff;}
-
-		.dropdown:hover .dropdown-content {display: block;background-color:rgba(130,154,233,.55);   color: #6affff;}
-
-	</style>
-</head>
-
-<body>
+            </div>
+            <div class="popup__button-STAKE-wrapper">
+              <button class="popup__button-STAKE">STAKE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="map-menu-screen">
+        <div class="DE-left-skewed-border"></div>
+        <div class="DE-bottom-circle">
+          <div class="DE-bottom-circle_dot">
+            <img src="./img/Ellipse 1.png" alt="" />
+          </div>
+          <div class="DE-bottom-circle_right-wing">
+            <img src="./img/Ellipse 3.png" alt="" />
+          </div>
+          <div class="DE-bottom-circle_left-wing">
+            <img src="./img/Ellipse 2.png" alt="" />
+          </div>
+        </div>
+        <div class="DE-lines-on-top_left">
+          <img src="./img/Rectangle 18.png" alt="" />
+          <img src="./img/Rectangle 18.png" alt="" />
+          <img src="./img/Rectangle 18.png" alt="" />
+        </div>
+        <div class="DE-lines-on-top_right">
+          <img src="./img/Rectangle 16.png" alt="" />
+          <img src="./img/Rectangle 16.png" alt="" />
+          <img src="./img/Rectangle 16.png" alt="" />
+        </div>
+        <div class="your-cards-container">
+          <div class="your-cards">
+            <div class="your-cards__header">
+              <div class="header__cards-button header__cards-button_map">
+                <span class="header__cards-button_text">cards</span>
+              </div>
+              <div class="header__map-button">
+                <span class="header__map-button_text">map</span>
+              </div>
+              <div class="header__logo-map">
+                <span class="header__logo-map_main">Map</span>
+                <span class="header__logo-map_small">soon</span>
+              </div>
+              <div class="header__top-right-corner">
+                <div class="header__top-right-corner_ico"></div>
+                <div class="header__top-right-corner_numbers">0.000</div>
+                <div class="header__top-right-corner_NON">NON</div>
+              </div>
+            </div>
+            <div class="map-card__main-part">
+              <div class="map-card__main-part_MAP"></div>
+              <div class="map-card__main-part_info">
+                <div class="map-card__main-part_info-name">Name</div>
+                <div class="map-card__main-part_info-stats">Stats</div>
+                <div class="map-card__main-part_info-owner">Owner</div>
+              </div>
+            </div>
+            <div class="popup__button-STAKE-wrapper">
+              <button class="popup__button-STAKE">CHOOSE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  -->
     <!-- Шапка -->
     <header>
-        <div class="container">
-            <div class="header__wrap">
-                <div class="logo">
-                    <a href="index.html" class="header__social-link">
-                        <img src="images/dest/logo.svg" alt="Logo">
-                    </a>
-                </div>
-                <nav class="menu">
-                    <ul class="main-menu">
-                        <li><a href="staking.html">Staking</a></li>
-                        <li><a href="lands.html">Lands</a></li>
-                        <li><a href="map.html">Map</a></li>
-                    </ul>
-                </nav>
-                <div id="ual-app"></div>
-            </div>
+      <div class="container">
+        <div class="header__wrap">
+          <div class="logo">
+            <a href="index.html" class="header__social-link">
+              <img src="images/dest/logo.svg" alt="Logo" />
+            </a>
+          </div>
+          <nav class="menu">
+            <ul class="main-menu">
+              <li><a href="staking.html">Staking</a></li>
+              <li><a href="lands.html">Lands</a></li>
+              <li><a href="map.html">Map</a></li>
+            </ul>
+          </nav>
+          <div id="ual-app"></div>
         </div>
+      </div>
     </header>
     <!-- Шапка End-->
     <div class="container">
-        <div class="content">
-            <!-- Название секции -->
-            <section class="">
-                <div class="title-block">
-                    <h2 class="page__title">Staking</h2>
-                </div>
-                <div class="content__block">
-                    <p>
-                        By staking objects, you begin the process of restoring the lands of both your own and others.
-                        You can choose any unoccupied land yourself. On lands of different quality, the speed of mining
-                        the NewOrigin (NON) token is different.
-                    </p>
-                </div>
-                <p>Available SOON</p>
-            </section>
-            <!-- Название секции End-->
-        </div>
+      <div class="content">
+        <!-- Название секции -->
+        <section class="">
+          <div class="title-block">
+            <!-- <h2 class="page__title">Staking</h2> -->
+			
+            <div class="stake-button_container">
+              <button class="stake-button">Stake</button>
+            </div>
+          </div>
+          <div class="content__block">
+            <p>
+              By staking objects, you begin the process of restoring the lands
+              of both your own and others. You can choose any unoccupied land
+              yourself. On lands of different quality, the speed of mining the
+              NewOrigin (NON) token is different.
+            </p>
+          </div>
+			<div class="container">
+			<center>
+				<table>
+				  <tr>
+					<td>
+					<div id="slot0" class="col-sm staking_block">
+					  Empty
+					</div>
+					</td>
+					<td>
+					<div id="slot1" class="col-sm staking_block">
+					  Empty
+					</div>
+					</td>
+					<td>
+					<div id="slot2" class="col-sm staking_block">
+					  Empty
+					</div>
+					</td>
+				</table>
+			</center>
+			  </div>
+			</tr>
+        </section>
+        <!-- Название секции End-->
+      </div>
     </div>
+
     <!-- Подвал -->
     <footer>
-        <div class="container">
-        </div>
+      <div class="container"></div>
     </footer>
-    <!-- Подвал End-->
+    <!-- Подвал End
     <script src="js/app.min.js"></script>
-	<script src="js/main_bundle.js"></script>
+    <script src="js/main_bundle.js"></script>
+	-->
+    <script src="js/popup-menu-script.js"></script>
+	<script src="js/waxjs.js"></script>
+	<script src="js/atomicassets.js"></script>
+	<script>
+		
+		const wax = new waxjs.WaxJS({
+		  rpcEndpoint: 'https://api.waxsweden.org',
+		  tryAutoLogin: false
+		});
+		
+		
+		const atomicApi = new atomicassets.ExplorerApi(
+		  "https://wax-aa.eu.eosamsterdam.net", 
+		  "atomicassets", 
+		  {fetch}
+		);
+		
+		WaxLogin();
+		
+		var staking_slots = new Array(3);
+		
+		async function WaxLogin(){
+		  try {
+		    const userAccount = await wax.login();
+			console.log(userAccount);
+			GetAssets();
+			GetUserSlots();
+		  } catch(e) {		
+		    console.log(e.message);	
+		  }
+		}
+		
+		async function GetAssets() {
+			const assets = await atomicApi.getAssets({owner: wax.userAccount, collection_name: "brokentest11"}, 1, 1000);
+	
+			Object.values(assets).forEach(function (value) {
+			
+		
+				let div = document.createElement('div');
+				div.className = "your-cards__cards_card";
+				div.onclick = async function () { 
+					
+				
+					var slotId = -1;
+					for(var i = 0 ; i < staking_slots.length; i++) {
+						if (staking_slots[i] != true) {
+							slotId = i;
+							break;
+						}
+					}
+					if (slotId >= 0)
+					{
+						var isStaked = await StakeCard(value.asset_id, slotId);
+						if (isStaked == true) {
+							div.remove();
+							var popup_menu = document.querySelector('.popup-stalking-wrapper');
+							popup_menu.click();
+						}
+							
+					} else {
+						window.alert("No empty slots!");
+					
+					}
+				};
+				
+				let img = document.createElement('img');
+				img.src = "https://ipfs.io/ipfs/" + value.data.img;
+				div.append(img);
+				document.getElementById('bag').append(div);
+	
+			});
+			
+		
+		}
+		
+		async function GetAssetInfo(assetId) {
+			const asset = await atomicApi.getAsset(assetId);
+			return asset;
+		}
+		
+		async function StakeCard(cardNum, slot){
+			try {
+			  const result = await wax.api.transact({
+				actions: [{
+				  account: '324324324242',
+				  name: 'stake',
+				  authorization: [{
+					actor: wax.userAccount,
+					permission: 'active',
+				  }],
+				  data: {
+					owner: wax.userAccount,
+					slot_id: slot,
+					asset_id: cardNum,
+				  },
+				},
+				{
+				  account: 'atomicassets',
+				  name: 'transfer',
+				  authorization: [{
+					actor: wax.userAccount,
+					permission: 'active',
+				  }],
+				  data: {
+					from: wax.userAccount,
+					to: '324324324242',
+					asset_ids: [cardNum],
+					memo: slot,
+				  },
+				}
+				]
+			  }, {
+				blocksBehind: 3,
+				expireSeconds: 30
+			  });
 
-</body>
+			} catch(e) {
+				console.log(e.message);
+				window.alert(e.message);
+				return false;
+		
+			}
+			return true;
+		}
+		
+		async function UnstakeCard(slot) {
+			try {
+			  const result = await wax.api.transact({
+				actions: [{
+				  account: '324324324242',
+				  name: 'claim',
+				  authorization: [{
+					actor: wax.userAccount,
+					permission: 'active',
+				  }],
+				  data: {
+					owner: wax.userAccount,
+					slot_id: slot,
+				  },
+				}]
+			  }, {
+				blocksBehind: 3,
+				expireSeconds: 30
+			  });
 
+			} catch(e) {
+				console.log(e.message);
+				window.alert(e.message);
+				return false;
+			}
+			return true;
+		}
+		
+		async function GetUserSlots() {
+			try {
+				const res = await wax.rpc.get_table_rows({
+				  json: true,
+				  code: '324324324242',
+				  scope: wax.userAccount,
+				  table: 'staking',
+				  limit: 20
+				});
+				
+				
+				
+				Object.entries(res.rows).forEach(async function (value) {
+				
+					var slot = value[1].slot_id;
+					var asset_id = value[1].asset_id;
+					
+					if (staking_slots.length > slot)
+						staking_slots[slot] = true;
+					
+					var info = await GetAssetInfo(asset_id);
+								
+					let img = document.createElement('img');
+					img.src = "https://ipfs.io/ipfs/" + info.data.img;
+					img.width = 150;
+					img.onclick = async function () { 
+						var isUnstaked = await UnstakeCard(slot);
+						if (isUnstaked)
+							document.getElementById('slot' + slot).innerHTML = "Empty";
+					};
+				
+					document.getElementById('slot' + slot).innerHTML = ""; //append(div);
+					document.getElementById('slot' + slot).append(img);
+					
+				});
+			} catch(e) {
+				console.log(e.message);
+				window.alert(e.message);
+			}
+		}
+		
+		
+		
+		
+	</script>
+  </body>
 </html>
